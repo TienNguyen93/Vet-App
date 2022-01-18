@@ -4,10 +4,12 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import PetName from "./PetName";
 import Date from "./Date";
+import Reason from "./Reason";
 
 const screenNames = {
     petName: "PetName",
-    date: "Date"
+    date: "Date",
+    reason: "Reason"
 }
 const AppointmentStack = createNativeStackNavigator();
 
@@ -29,6 +31,11 @@ function AppointmentStackScreen({navigation, route}) {
             <AppointmentStack.Screen
                 name={screenNames.date}
                 component={Date}
+                options={{headerShown: false}}/>
+
+            <AppointmentStack.Screen
+                name={screenNames.reason}
+                component={Reason}
                 options={{headerShown: false}}/>
 
         </AppointmentStack.Navigator>
