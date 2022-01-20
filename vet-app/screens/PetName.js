@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { StyleSheet, Text, View, TextInput } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import Date from "./Date";
@@ -32,10 +32,12 @@ function PetName ({navigation}) {
                 </View>
             </View>
 
-            <View style={{flex: 1, justifyContent: 'center'}}>
-                <Text
-                    style={{fontSize: 20}}
-                    onPress={() => navigation.navigate('Date')}>Continue</Text>
+            <View style={{margin: 50, flexDirection: 'row', justifyContent: 'space-between'}}>
+                <TouchableOpacity
+                    style={{backgroundColor: 'pink', }}
+                    onPress={() => navigation.navigate('Date')}>
+                    <Text>Next</Text>
+                </TouchableOpacity>
             </View>
 
         </View>

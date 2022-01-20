@@ -1,10 +1,13 @@
 import React, {useState} from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-
+import { StyleSheet, Text, View, TextInput } from 'react-native';
 import {Picker} from '@react-native-picker/picker';
+
+import OwnerInfo from "./OwnerInfo";
 
 function Reason ({navigation}) {
     const [selectedValue, setSelectedValue] = useState("")
+    const [details, setDetails] = useState("")
+
     return (
         <View style={styles.container}>
             <View style={styles.reason}>
@@ -22,8 +25,21 @@ function Reason ({navigation}) {
                 </Picker>
             </View>
 
+                <View style={styles.reason}>
+                    <Text style={{fontSize: 20}}>Details of visit reason: (Optional)</Text>
+                    <TextInput
+                        style={{padding: 20, borderWidth: 1, borderRadius: 10, borderColor: 'gray', height: 100}}
+                        onChangeText={setDetails}
+                        value={details}
+                        placeholder="Describe details for the visit reason"/>
+                </View>
+
             <View style={{flex: 1, justifyContent: 'center'}}>
-                <Text style={{fontSize: 20}} onPress={() => navigation.goBack()}>Go back!</Text>
+                <Text style={{fontSize: 20}} onPress={() => navigation.goBack()}>Go back</Text>
+
+                <Text
+                    style={{fontSize: 20}}
+                    onPress={() => navigation.navigate("OwnerInfo")}>Continue</Text>
             </View>
         </View>
     )

@@ -1,15 +1,17 @@
 import * as React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import PetName from "./PetName";
 import Date from "./Date";
 import Reason from "./Reason";
+import OwnerInfo from "./OwnerInfo";
 
 const screenNames = {
     petName: "PetName",
     date: "Date",
-    reason: "Reason"
+    reason: "Reason",
+    ownerInfo: "OwnerInfo"
 }
 const AppointmentStack = createNativeStackNavigator();
 
@@ -36,6 +38,11 @@ function AppointmentStackScreen({navigation, route}) {
             <AppointmentStack.Screen
                 name={screenNames.reason}
                 component={Reason}
+                options={{headerShown: false}}/>
+
+            <AppointmentStack.Screen
+                name={screenNames.ownerInfo}
+                component={OwnerInfo}
                 options={{headerShown: false}}/>
 
         </AppointmentStack.Navigator>
