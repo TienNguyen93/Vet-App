@@ -11,7 +11,9 @@ function Reason ({navigation}) {
     return (
         <View style={styles.container}>
             <View style={styles.reason}>
-                <Text style={{fontSize: 20}}>4. What is the reason of visit?</Text>
+                <Text style={{fontSize: 20, color: '#572B29', fontWeight: 'bold', letterSpacing: 0.50}}>
+                    4. What is the reason of visit?
+                </Text>
 
                 <Picker
                     style={{ justifyContent: 'center'}}
@@ -26,9 +28,12 @@ function Reason ({navigation}) {
             </View>
 
                 <View style={styles.reason}>
-                    <Text style={{fontSize: 20}}>Details of visit reason: (Optional)</Text>
+                    <Text style={{fontSize: 20, color: '#572B29', fontWeight: 'bold', letterSpacing: 0.50}}>
+                        Details of visit reason: (Optional)
+                    </Text>
                     <TextInput
-                        style={{padding: 20, borderWidth: 1, borderRadius: 10, borderColor: 'gray', height: 100}}
+                        style={{padding: 20, borderWidth: 1, borderRadius: 10,
+                            borderColor: '#D3D3D3', fontSize: 15, color: 'black'}}
                         onChangeText={setDetails}
                         value={details}
                         placeholder="Describe details for the visit reason"/>
