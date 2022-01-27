@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
-import { StyleSheet, Text, View, TextInput } from 'react-native';
+import {StyleSheet, Text, View, TextInput, TouchableOpacity} from 'react-native';
 import {Picker} from '@react-native-picker/picker';
 
 import OwnerInfo from "./OwnerInfo";
+import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 function Reason ({navigation}) {
     const [selectedValue, setSelectedValue] = useState("")
@@ -39,12 +40,23 @@ function Reason ({navigation}) {
                         placeholder="Describe details for the visit reason"/>
                 </View>
 
-            <View style={{flex: 1, justifyContent: 'center'}}>
-                <Text style={{fontSize: 20}} onPress={() => navigation.goBack()}>Go back</Text>
+            <View style={{margin: 50, flexDirection: 'row', justifyContent: 'space-between'}}>
+                <View style={{paddingRight: 50}}>
+                    <TouchableOpacity
+                        style={{backgroundColor: '#F91B17', borderRadius: 15, padding: 15}}
+                        onPress={() => navigation.goBack()}>
+                        <Icon name="arrow-left" color="white" size={30}/>
+                    </TouchableOpacity>
+                </View>
 
-                <Text
-                    style={{fontSize: 20}}
-                    onPress={() => navigation.navigate("OwnerInfo")}>Continue</Text>
+                <View>
+                    <TouchableOpacity
+                        style={{backgroundColor: '#F91B17', borderRadius: 15, padding: 15}}
+                        onPress={() => navigation.navigate('OwnerInfo')}>
+                        <Icon name="arrow-right" color="white" size={30}/>
+                    </TouchableOpacity>
+                </View>
+
             </View>
         </View>
     )

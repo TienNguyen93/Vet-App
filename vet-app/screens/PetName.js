@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import Date from "./Date";
+import SetAppoint from "./SetAppoint";
 
 function PetName ({navigation}) {
     const [name, setName] = useState(null);
@@ -42,7 +42,7 @@ function PetName ({navigation}) {
                 <View>
                     <TouchableOpacity
                         style={{backgroundColor: '#F91B17', borderRadius: 15, padding: 15}}
-                        onPress={() => navigation.navigate('Date')}>
+                        onPress={() => navigation.navigate('SetAppoint')}>
                         <Icon name="arrow-right" color="white" size={30}/>
                     </TouchableOpacity>
                 </View>
