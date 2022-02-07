@@ -9,17 +9,19 @@ function SetAppoint ({navigation}) {
     const [date, setDate] = useState(new Date(Date.now()));
 
     const timeSlots = [
-        {id: 1, time: "8:30"}, {id: 2, time: "9:00"}, {id: 3, time: "10:30"},
-        {id: 4, time: "12:30"}, {id: 5, time: "1:00"}, {id: 6, time: "1:30"},
+        {id: 1, time: "08:30"}, {id: 2, time: "09:00"}, {id: 3, time: "10:30"},
+        {id: 4, time: "12:30"}, {id: 5, time: "13:00"}, {id: 6, time: "13:30"},
+        {id: 7, time: "15:15"}, {id: 8, time: "16:00"}, {id: 9, time: "17:20"},
     ];
 
     const Item = ({ time }) => (
-      <View>
-          <TouchableOpacity>
-              <Text>{time}</Text>
+        <View style={{flexDirection: 'row', justifyContent: 'space-around', marginRight: 5}}>
+          <TouchableOpacity style={{borderWidth: 1, borderRadius: 10}}>
+              <Text style={{fontSize: 16, padding: 10, fontWeight: 'bold'}}>{time}</Text>
           </TouchableOpacity>
-      </View>
+        </View>
     );
+
 
     const renderItem = ({ item }) => (
         <Item time={item.time} />
@@ -61,18 +63,19 @@ function SetAppoint ({navigation}) {
             <View style={styles.date}>
                 <Text style={{fontSize: 20, color: '#572B29', fontWeight: 'bold'}}>Pick a time</Text>
 
-                <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+
                     {/*<Pills times={timeSlots}/>*/}
                     {/*<Pills times="11:00"/>*/}
                     {/*<Pills times="12:15"/>*/}
                     {/*<Pills times="2:45"/>*/}
 
                     <FlatList
+                        key={""}
                         data={timeSlots}
                         renderItem={renderItem}
-                        keyExtractor={item => item.id}
-                        numColumns={4}/>
-                </View>
+                        keyExtractor={(item) => item.id}
+                        numColumns={5}/>
+
 
             </View>
 
