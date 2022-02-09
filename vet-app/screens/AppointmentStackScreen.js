@@ -40,11 +40,6 @@ function AppointmentStackScreen({navigation, route}) {
                 component={Reason}
                 options={{headerShown: false}}/>
 
-            <AppointmentStack.Screen
-                name={screenNames.ownerInfo}
-                component={OwnerInfo}
-                options={{headerShown: false}}/>
-
         </AppointmentStack.Navigator>
     );
 }

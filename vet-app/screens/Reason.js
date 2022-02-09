@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
 import {StyleSheet, Text, View, TextInput, TouchableOpacity} from 'react-native';
 import {Picker} from '@react-native-picker/picker';
-
-import OwnerInfo from "./OwnerInfo";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+
+import ProfileScreen from "./ProfileScreen";
+
 
 function Reason ({navigation}) {
     const [selectedValue, setSelectedValue] = useState("")
@@ -52,7 +53,7 @@ function Reason ({navigation}) {
                 <View>
                     <TouchableOpacity
                         style={{backgroundColor: '#F91B17', borderRadius: 15, padding: 15}}
-                        onPress={() => navigation.navigate('OwnerInfo')}>
+                        onPress={() => navigation.navigate('ProfileScreen')}>
                         <Icon name="arrow-right" color="white" size={30}/>
                     </TouchableOpacity>
                 </View>
