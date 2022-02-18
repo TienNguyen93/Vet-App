@@ -5,13 +5,11 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import PetName from "./PetName";
 import SetAppoint from "./SetAppoint";
 import Reason from "./Reason";
-import OwnerInfo from "./OwnerInfo";
 
 const screenNames = {
     petName: "PetName",
     setAppoint: "SetAppoint",
     reason: "Reason",
-    ownerInfo: "OwnerInfo"
 }
 const AppointmentStack = createNativeStackNavigator();
 

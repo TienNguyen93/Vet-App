@@ -5,7 +5,6 @@ import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 import ProfileScreen from "./ProfileScreen";
 
-
 function Reason ({navigation}) {
     const [selectedValue, setSelectedValue] = useState("")
     const [details, setDetails] = useState("")

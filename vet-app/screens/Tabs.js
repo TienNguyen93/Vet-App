@@ -39,7 +39,7 @@ function Tabs() {
                 // #572B29
                 tabBarActiveTintColor: 'orange',
                 tabBarLabelStyle: {paddingBottom: 10, fontSize: 12, fontWeight: 'bold'},
-                tabBarStyle: {padding: 10, height: 70}
+                tabBarStyle: {padding: 10, height: 65}
             })}
         >
             <Tab.Screen name={home} component={HomeScreen}  />
