@@ -28,15 +28,15 @@ function AppointmentStackScreen({navigation, route}) {
                 component={PetName}
                 options={{headerShown: false}}/>
 
-            <AppointmentStack.Screen
-                name={screenNames.setAppoint}
-                component={SetAppoint}
-                options={{headerShown: false}}/>
+            {/*<AppointmentStack.Screen*/}
+            {/*    name={screenNames.setAppoint}*/}
+            {/*    component={SetAppoint}*/}
+            {/*    options={{headerShown: false}}/>*/}
 
-            <AppointmentStack.Screen
-                name={screenNames.reason}
-                component={Reason}
-                options={{headerShown: false}}/>
+            {/*<AppointmentStack.Screen*/}
+            {/*    name={screenNames.reason}*/}
+            {/*    component={Reason}*/}
+            {/*    options={{headerShown: false}}/>*/}
 
         </AppointmentStack.Navigator>
     );

@@ -6,14 +6,21 @@ import {NavigationContainer} from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 
+import Home from "./screens/Home";
 import Tabs from "./screens/Tabs";
 
-const Tab = createBottomTabNavigator();
+const Stack = createNativeStackNavigator();
 
 function App() {
   return (
       <NavigationContainer>
-          <Tabs />
+          <Stack.Navigator
+            screenOptions={{headerShown: false}}
+            initialRouteName={'Home'}>
+          <Stack.Screen
+            name="Home"
+            component={Tabs}/>
+          </Stack.Navigator>
       </NavigationContainer>
   );
 }

@@ -7,7 +7,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import Ionicons from "react-native-vector-icons/Ionicons";
 
-import HomeScreen from "./HomeScreen";
+import Home from "./Home";
 import AppointmentStackScreen from "./AppointmentStackScreen";
 import ProfileScreen from "./ProfileScreen";
 
@@ -39,11 +39,11 @@ function Tabs() {
                 // #572B29
                 tabBarActiveTintColor: 'orange',
                 tabBarLabelStyle: {paddingBottom: 10, fontSize: 12, fontWeight: 'bold'},
-                tabBarStyle: {padding: 10, height: 65}
+                tabBarStyle: {padding: 10, height: 65},
             })}
         >
-            <Tab.Screen name={home} component={HomeScreen}  />
-            <Tab.Screen name={appointment} component={AppointmentStackScreen} />
+            <Tab.Screen name={home} component={Home} options={{headerShown:false}}/>
+            <Tab.Screen name={appointment} component={AppointmentStackScreen} options={{headerShown:false}} />
             <Tab.Screen name={profile} component={ProfileScreen} />
         </Tab.Navigator>
     )
