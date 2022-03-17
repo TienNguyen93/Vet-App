@@ -32,8 +32,7 @@ const Home = ({navigation}) => {
                             <Text style={styles.text}>Dr. Carly Garcia</Text>
                             <Text style={{fontSize: 15, color: '#E5E4E2'}}>Have a nice day</Text>
                         </View>
-                        <Image source={vet1}
-                               style={{width: 140, height: 140, marginLeft: 90}}/>
+                        <Image source={vet1} style={{width: 140, height: 140, marginLeft: 90}}/>
                     </View>
 
                 </ImageBackground>
@@ -80,18 +79,6 @@ const Home = ({navigation}) => {
                                         </Text>
                                     </Icon>
                                 </View>
-
-                                {/*<Ionicons name="location-outline" size={18} color="white">*/}
-                                {/*    <Text style={{letterSpacing: 0.8, lineHeight: 30, fontWeight: 'bold'}}>*/}
-                                {/*        {" "}Main Street, 18*/}
-                                {/*    </Text>*/}
-                                {/*</Ionicons>*/}
-
-                                {/*<Icon name="phone-outline" size={18} color="white">*/}
-                                {/*    <Text style={{letterSpacing: 0.8, lineHeight: 30, fontWeight: 'bold'}}>*/}
-                                {/*        {" "}+1 121 234 5678*/}
-                                {/*    </Text>*/}
-                                {/*</Icon>*/}
                             </View>
                         </View>
 
