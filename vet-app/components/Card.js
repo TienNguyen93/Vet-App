@@ -6,14 +6,27 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import per1 from "../assets/per1.jpg";
 import pet1 from "../assets/pet1.jpg";
 
-const Card = (props) => {
+function Card (props) {
+    const isClick = props.isClick;
+
+    const message = () => {
+        return (
+            <Text style={{color: 'white', alignSelf: 'flex-end', borderRadius: 15,
+                marginTop: -10, marginRight: -10, fontSize: 12, padding: 1, paddingBottom: 2,
+                paddingRight: 5, paddingLeft: 5, backgroundColor: '#eb762b'}}>
+                Waiting Approval
+            </Text>
+        )
+    }
+
     return (
         <View style={styles.container}>
             <Text style={{fontSize: 15, alignSelf: 'flex-start', padding: 15}}>
                 {props.startTime}
             </Text>
 
-            <View style={styles.cardBot}>
+            <View style={styles.cardBotTrue}>
+                {props.isClick ? message() : null}
                 <View style={{flexDirection: 'row'}}>
                     <View>
                         <Image source={props.pic1} style={{width: 80, height: 80, borderRadius: 100 / 2, padding: 40}}/>
@@ -23,6 +36,7 @@ const Card = (props) => {
                     </View>
 
                     <View style={{paddingLeft: 20}}>
+
                         <Text style={{letterSpacing: 0.1, fontSize: 18, color: 'black', fontWeight: 'bold'}}>
                             {props.name}
                         </Text>
@@ -46,10 +60,10 @@ const Card = (props) => {
 
             </View>
         </View>
-    )
+    );
 }
 
-export {Card};
+export default Card;
 
 const styles = StyleSheet.create({
     container: {
@@ -65,7 +79,15 @@ const styles = StyleSheet.create({
         backgroundColor: "#eb762b",
         elevation: 30,
     },
-    cardBot: {
+    cardBotTrue: {
+        height: 140,
+        width: 370,
+        padding: 18,
+        borderRadius: 23,
+        backgroundColor: "white",
+        elevation: 10,
+    },
+    cardBotFalse: {
         height: 140,
         width: 370,
         padding: 18,

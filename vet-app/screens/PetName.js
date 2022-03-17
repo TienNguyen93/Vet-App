@@ -3,7 +3,7 @@ import {StyleSheet, Text, View, TextInput, TouchableOpacity, ScrollView, ImageBa
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import SetAppoint from "./SetAppoint";
-import {Card} from '../components/Card'
+import Card from '../components/Card'
 
 import orange2 from "../assets/orange2.jpg";
 import per2 from "../assets/per2.jpg";
@@ -47,6 +47,7 @@ const PetName = ({navigation}) => {
                         }}>
                 <View style={{justifyContent: 'center', alignItems: 'center', padding: 5}}>
                     <Card
+                        isClick={true}
                         pic1={per2}
                         pic2={pet1}
                         startTime="9:40 AM"
@@ -61,6 +62,7 @@ const PetName = ({navigation}) => {
                         petName="Devil"
                         time="10:00-10:20"/>
                     <Card
+                        isClick={true}
                         pic1={per4}
                         pic2={pet3}
                         startTime="10:20 AM"
