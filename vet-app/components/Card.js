@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Text, View, StyleSheet, Image} from 'react-native';
+import {Text, View, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Ionicons from "react-native-vector-icons/Ionicons";
 
@@ -25,40 +25,48 @@ function Card (props) {
                 {props.startTime}
             </Text>
 
-            <View style={styles.cardBotTrue}>
-                {props.isClick ? message() : null}
-                <View style={{flexDirection: 'row'}}>
-                    <View>
-                        <Image source={props.pic1} style={{width: 80, height: 80, borderRadius: 100 / 2, padding: 40}}/>
-                        <View style={{position: 'absolute', alignSelf: 'center', paddingTop: 65}}>
-                            <Image source={props.pic2} style={{width: 40, height: 40, borderRadius: 100 / 2,}}/>
+            <TouchableOpacity>
+                <View style={props.isClick ? styles.cardBotTrue : styles.cardBotFalse}>
+                        {props.isClick ? message() : null}
+                        <View style={{flexDirection: 'row'}}>
+                            <View>
+                                <Image source={props.pic1}
+                                       style={{width: 80, height: 80, borderRadius: 100 / 2, padding: 40}}/>
+                                <View style={{position: 'absolute', alignSelf: 'center', paddingTop: 65}}>
+                                    <Image source={props.pic2} style={{width: 40, height: 40, borderRadius: 100 / 2,}}/>
+                                </View>
+                            </View>
+
+                            <View style={{paddingLeft: 20}}>
+
+                                <Text style={{letterSpacing: 0.1, fontSize: 18, color: 'black', fontWeight: 'bold'}}>
+                                    {props.name}
+                                </Text>
+
+                                <Ionicons name="paw-outline" size={18} color="#A9A9A9">
+                                    <Text style={{letterSpacing: 0.8, lineHeight: 30}}>
+                                        {" "}{props.petName}
+                                    </Text>
+                                </Ionicons>
+
+                                {/*<Text>{props.date}</Text>*/}
+
+                                <Icon name="clock-outline" size={18} color="#eb762b">
+                                    <Text style={{
+                                        letterSpacing: 0.8,
+                                        lineHeight: 30,
+                                        fontWeight: 'bold',
+                                        color: 'black'
+                                    }}>
+                                        {" "}{props.time}
+                                    </Text>
+                                </Icon>
+
+                            </View>
                         </View>
-                    </View>
-
-                    <View style={{paddingLeft: 20}}>
-
-                        <Text style={{letterSpacing: 0.1, fontSize: 18, color: 'black', fontWeight: 'bold'}}>
-                            {props.name}
-                        </Text>
-
-                        <Ionicons name="paw-outline" size={18} color="#A9A9A9">
-                            <Text style={{letterSpacing: 0.8, lineHeight: 30}}>
-                                {" "}{props.petName}
-                            </Text>
-                        </Ionicons>
-
-                        {/*<Text>{props.date}</Text>*/}
-
-                        <Icon name="clock-outline" size={18} color="#eb762b">
-                            <Text style={{letterSpacing: 0.8, lineHeight: 30, fontWeight: 'bold', color: 'black'}}>
-                                {" "}{props.time}
-                            </Text>
-                        </Icon>
-
-                    </View>
                 </View>
+            </TouchableOpacity>
 
-            </View>
         </View>
     );
 }
@@ -85,7 +93,8 @@ const styles = StyleSheet.create({
         padding: 18,
         borderRadius: 23,
         backgroundColor: "white",
-        elevation: 10,
+        borderWidth: 1,
+        borderColor: '#eb762b'
     },
     cardBotFalse: {
         height: 140,
@@ -93,6 +102,5 @@ const styles = StyleSheet.create({
         padding: 18,
         borderRadius: 23,
         backgroundColor: "white",
-        elevation: 10,
     },
 });

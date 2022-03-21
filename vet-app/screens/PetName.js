@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {StyleSheet, Text, View, TextInput, TouchableOpacity, ScrollView, ImageBackground, Image} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import CalendarStrip from 'react-native-calendar-strip';
 
 import SetAppoint from "./SetAppoint";
 import Card from '../components/Card'
@@ -37,15 +38,38 @@ const PetName = ({navigation}) => {
         )
     }
 
+    function renderCalendar() {
+        return (
+        <View style={{flex: 1}}>
+            <CalendarStrip
+                scrollable
+                scrollerPaging
+                // calendarColor={'#3343CE'}
+                // customDatesStyles
+                daySelectionAnimation={{type: 'background', duration: 200,  highlightColor:'#eb762b'}}
+                style={{height:"100%", width: 430, padding: 15, marginBottom: 20}}
+                calendarHeaderStyle={{fontSize: 20, marginBottom: 20}}
+                dateNumberStyle={{color: 'black', fontSize: 20}}
+                dateNameStyle={{color: 'black', fontSize: 10}}
+                highlightDateNumberStyle={{color: 'white'}}
+                highlightDateNameStyle={{color: 'white'}}
+                iconContainer={{flex: 0.1}}
+
+            />
+        </View>
+        )
+    }
+
     return (
         <View style={styles.container}>
             {renderHeader()}
             <ScrollView showsVerticalScrollIndicator={false}
                         style={{
                             flex: 1, marginTop: -30, borderTopLeftRadius: 12 * 2,
-                            borderTopRightRadius: 12 * 2, backgroundColor: '#f8f8ff'
+                            borderTopRightRadius: 12 * 2, backgroundColor: '#f5f9fc'
                         }}>
                 <View style={{justifyContent: 'center', alignItems: 'center', padding: 5}}>
+                    {renderCalendar()}
                     <Card
                         isClick={true}
                         pic1={per2}
@@ -83,9 +107,6 @@ const styles = StyleSheet.create({
         flex: 1,
         width: '100%',
         backgroundColor: '#fff',
-        // alignItems: 'center',
-        // justifyContent: 'center',
-        // color: 'orange'
     },
     petName: {
         flex: 1,
