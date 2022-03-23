@@ -1,10 +1,16 @@
 import { StyleSheet, Text, View, TextInput } from 'react-native';
+import {Header} from "../components/Header";
+import React from "react";
 
 function ProfileScreen ({navigation}) {
     return (
-        <View style={styles.container}>
-            <Text style={{fontSize: 20}}>Profile screen!</Text>
+        <View>
+            <Header />
+            <View style={styles.container}>
+                <Text style={{fontSize: 20}}>Profile screen!</Text>
+            </View>
         </View>
+
     )
 }
 

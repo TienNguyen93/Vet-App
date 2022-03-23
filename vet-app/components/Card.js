@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
-import {Text, View, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import {Text, View, StyleSheet, Image, TouchableOpacity, Button} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Ionicons from "react-native-vector-icons/Ionicons";
+import { useNavigation } from '@react-navigation/native';
 
 import per1 from "../assets/per1.jpg";
 import pet1 from "../assets/pet1.jpg";
 
 function Card (props) {
     const isClick = props.isClick;
+    const navigation = useNavigation();
 
     const message = () => {
         return (
@@ -25,7 +27,7 @@ function Card (props) {
                 {props.startTime}
             </Text>
 
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('MyModal')}>
                 <View style={props.isClick ? styles.cardBotTrue : styles.cardBotFalse}>
                         {props.isClick ? message() : null}
                         <View style={{flexDirection: 'row'}}>

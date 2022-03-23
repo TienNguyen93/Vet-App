@@ -5,6 +5,7 @@ import CalendarStrip from 'react-native-calendar-strip';
 
 import SetAppoint from "./SetAppoint";
 import Card from '../components/Card'
+import {Header} from "../components/Header";
 
 import orange2 from "../assets/orange2.jpg";
 import per2 from "../assets/per2.jpg";
@@ -54,7 +55,6 @@ const PetName = ({navigation}) => {
                 highlightDateNumberStyle={{color: 'white'}}
                 highlightDateNameStyle={{color: 'white'}}
                 iconContainer={{flex: 0.1}}
-
             />
         </View>
         )
