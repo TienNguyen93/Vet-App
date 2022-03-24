@@ -8,62 +8,51 @@ import per1 from "../assets/per1.jpg";
 import pet1 from "../assets/pet1.jpg";
 
 function Card (props) {
-    const isClick = props.isClick;
+    const available = props.available;
     const navigation = useNavigation();
 
     const message = () => {
         return (
-            <Text style={{color: 'white', alignSelf: 'flex-end', borderRadius: 15,
-                marginTop: -10, marginRight: -10, fontSize: 12, padding: 1, paddingBottom: 2,
-                paddingRight: 5, paddingLeft: 5, backgroundColor: '#eb762b'}}>
-                Waiting Approval
-            </Text>
+            <View style={{marginTop: 15}}>
+                <Text style={{color: '#40826D', alignSelf: 'flex-start', borderRadius: 15,
+                    marginTop: -10, marginRight: -10, fontSize: 14, padding: 1, paddingBottom: 2,
+                    paddingRight: 5, paddingLeft: 5, backgroundColor: '#ECFFDC'}}>
+                    Available to chat
+                </Text>
+            </View>
+        )
+    }
+
+    const online = () => {
+        return (
+            <Icon name="circle" size={25} color="#eb762b" style={{paddingLeft: 40}}/>
         )
     }
 
     return (
         <View style={styles.container}>
-            <Text style={{fontSize: 15, alignSelf: 'flex-start', padding: 15}}>
-                {props.startTime}
-            </Text>
+            {/*<Text style={{fontSize: 15, alignSelf: 'flex-start', padding: 15}}>*/}
+            {/*    {props.startTime}*/}
+            {/*</Text>*/}
 
             <TouchableOpacity onPress={() => navigation.navigate('MyModal')}>
-                <View style={props.isClick ? styles.cardBotTrue : styles.cardBotFalse}>
-                        {props.isClick ? message() : null}
+                <View style={props.available ? styles.cardBotTrue : styles.cardBotFalse}>
+
                         <View style={{flexDirection: 'row'}}>
                             <View>
-                                <Image source={props.pic1}
+                                <Image source={props.image}
                                        style={{width: 80, height: 80, borderRadius: 100 / 2, padding: 40}}/>
-                                <View style={{position: 'absolute', alignSelf: 'center', paddingTop: 65}}>
-                                    <Image source={props.pic2} style={{width: 40, height: 40, borderRadius: 100 / 2,}}/>
-                                </View>
                             </View>
 
                             <View style={{paddingLeft: 20}}>
-
-                                <Text style={{letterSpacing: 0.1, fontSize: 18, color: 'black', fontWeight: 'bold'}}>
+                                <Text style={{letterSpacing: 0.1, fontSize: 20, color: 'black', fontWeight: 'bold'}}>
                                     {props.name}
                                 </Text>
 
-                                <Ionicons name="paw-outline" size={18} color="#A9A9A9">
-                                    <Text style={{letterSpacing: 0.8, lineHeight: 30}}>
-                                        {" "}{props.petName}
-                                    </Text>
-                                </Ionicons>
-
-                                {/*<Text>{props.date}</Text>*/}
-
-                                <Icon name="clock-outline" size={18} color="#eb762b">
-                                    <Text style={{
-                                        letterSpacing: 0.8,
-                                        lineHeight: 30,
-                                        fontWeight: 'bold',
-                                        color: 'black'
-                                    }}>
-                                        {" "}{props.time}
-                                    </Text>
-                                </Icon>
-
+                                <Text style={{letterSpacing: 0.8, lineHeight: 30, fontSize: 18}}>
+                                    {props.clinic}
+                                </Text>
+                                {props.available ? message() : null}
                             </View>
                         </View>
                 </View>

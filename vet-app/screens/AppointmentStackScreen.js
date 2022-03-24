@@ -23,7 +23,7 @@ function ModalScreen({navigation}) {
             <ImageBackground source={orange2} resizemode="cover"
                              style={{flex: 0.3, justifyContent: 'center', alignItems: 'center'}}>
                 <TouchableOpacity onPress={() => navigation.goBack()}>
-                    <Icon name="arrow-left" size={30} color="white" style={{paddingRight: 300}}/>
+                    <Icon name="arrow-left" size={30} color="white" style={{paddingRight: 350}}/>
                 </TouchableOpacity>
             </ImageBackground>
             <ScrollView showsVerticalScrollIndicator={false}
@@ -35,10 +35,24 @@ function ModalScreen({navigation}) {
                     borderTopLeftRadius: 12 * 2, borderTopRightRadius: 12 * 2}}>
                     <Image source={per2}
                            style={{width: 130, height: 130, borderRadius: 200 / 2,
-                               alignSelf: 'center'}}/>
-                    <Text style={{fontSize: 20, alignSelf: 'center'}}>Julia Wimmerlin</Text>
+                               alignSelf: 'center', marginTop: 20}}/>
+                    <Text style={{letterSpacing: 0.5, fontSize: 20, alignSelf: 'center', padding: 20, fontWeight: 'bold'}}>
+                        Julia Wimmerlin
+                    </Text>
+                    <View style={{flexDirection: 'row', justifyContent: 'space-evenly', paddingBottom: 25}}>
+                        <Icon name="calendar-month-outline" size={18} color="#eb762b">
+                            <Text style={{color: 'black', fontWeight: 'bold', letterSpacing: 0.5}}>
+                                {" "}26 Mar Jan
+                            </Text>
+                        </Icon>
+                        <Icon name="clock-outline" size={18} color="#eb762b">
+                            <Text style={{color: 'black', fontWeight: 'bold', fontSize: 18}}>
+                                {" "}9:40 AM-10:00 AM
+                            </Text>
+                        </Icon>
+                    </View>
                 </View>
-                <View style={{alignSelf: 'flex-start', padding: 20}}>
+                <View style={{alignSelf: 'flex-start', padding: 20, marginTop: -15}}>
                     <View>
                         <View style={[styles.cardTop, {marginBottom: 20}]}>
                             <View style={{flexDirection: 'row'}}>

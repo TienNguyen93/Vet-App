@@ -12,8 +12,11 @@ import doctor from '../assets/doctor.jpg'
 import vet1 from '../assets/vet1.png'
 import vet2 from '../assets/vet2.png'
 import vet3 from '../assets/vet3.png'
+import Card from '../components/Card'
+
 
 const Home = ({navigation}) => {
+
     function renderHeader() {
         return (
             <View style={{width: '100%',height: 250}}>
@@ -26,11 +29,11 @@ const Home = ({navigation}) => {
 
                     <View style={{flexDirection: 'row'}}>
                         <View style={{flexDirection: 'column'}}>
-                            <Image source={doctor}
+                            <Image source={per1}
                                    style={{width: 80, height: 80, borderRadius: 100 / 2, padding: 40}}/>
                             <Text style={[styles.text, {marginTop: 10}]}>Hello </Text>
-                            <Text style={styles.text}>Dr. Carly Garcia</Text>
-                            <Text style={{fontSize: 15, color: '#E5E4E2'}}>Have a nice day</Text>
+                            <Text style={styles.text}>Jessie,</Text>
+                            <Text style={{fontSize: 15, color: '#E5E4E2'}}>how can we help?</Text>
                         </View>
                         <Image source={vet1} style={{width: 140, height: 140, marginLeft: 90}}/>
                     </View>
@@ -46,69 +49,43 @@ const Home = ({navigation}) => {
             <ScrollView
                 showsVerticalScrollIndicator={false}
                 style={{flex: 1, marginTop: -25, borderTopLeftRadius: 12 * 2,
-                        borderTopRightRadius: 12 * 2, backgroundColor: '#f8f8ff'
+                        borderTopRightRadius: 12 * 2, backgroundColor: '#F2F1F0'
                 }}>
                 <View style={{justifyContent: 'center', alignItems: 'center', padding: 5}}>
-                    <Text style={styles.title}>New Booking</Text>
+                    <Text style={styles.title}>Book Now</Text>
 
-                    <View style={styles.cardTop}>
-                        <View style={{flexDirection: 'row', height: 100}}>
-                            <Image source={per1} style={{width: 80, height: 80, borderRadius: 100 / 2, padding: 40}}/>
+                    <Card
+                        image={doctor}
+                        name="Dr. Nelson Armstrong"
+                        clinic="Petsie Care Team"
+                        available={true}
+                    />
 
-                            <View style={{paddingLeft: 20}}>
-                                <Text style={{letterSpacing: 0.1, fontSize: 18, color: 'white', fontWeight: 'bold'}}>
-                                    Danielle Kordan
-                                </Text>
-
-                                <Ionicons name="paw-outline" size={18} color="#E5E4E2">
-                                    <Text style={{letterSpacing: 0.8, lineHeight: 30}}>
-                                        {" "}Chamberlain
-                                    </Text>
-                                </Ionicons>
-
-                                <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-                                    <Icon name="calendar-month-outline" size={18} color="white">
-                                        <Text style={{letterSpacing: 0.8, fontWeight: 'bold', lineHeight: 30}}>
-                                            {" "}Feb 14{"   "}
-                                        </Text>
-                                    </Icon>
-
-                                    <Icon name="clock-outline" size={18} color="white" style={{marginLeft: 10}}>
-                                        <Text style={{letterSpacing: 0.8, lineHeight: 30, fontWeight: 'bold'}}>
-                                            {" "}9:40-10:00
-                                        </Text>
-                                    </Icon>
-                                </View>
-                            </View>
+                    <View style={styles.cardBot}>
+                        <View style={{flexDirection: 'row'}}>
+                            <Icon name="circle" size={25} color="#eb762b" style={{paddingLeft: 40}}/>
+                            <Icon name="star" size={25} color="#eb762b" style={{paddingLeft: 40}}/>
                         </View>
-
-                        <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>
-                            <TouchableOpacity
-                                style={{
-                                    borderWidth: 1, borderRadius: 15, width: 150,
-                                    alignItems: 'center', padding: 15, borderColor: 'white'
-                                }}>
-                                <Text style={{
-                                    letterSpacing: 0.8, fontSize: 15,
-                                    fontWeight: 'bold', color: 'white'
-                                }}>
-                                    Reject
+                        <View style={{flexDirection: 'row', height: 100}}>
+                            <Image source={doctor} style={{width: 80, height: 80, borderRadius: 100 / 2, padding: 40}}/>
+                            <View style={{paddingLeft: 20}}>
+                                <Text style={{letterSpacing: 0.1, fontSize: 20, color: 'black', fontWeight: 'bold'}}>
+                                    Dr. Nelson Armstrong
                                 </Text>
-                            </TouchableOpacity>
 
-                            <TouchableOpacity
-                                style={{
-                                    borderWidth: 1, borderRadius: 15, width: 150,
-                                    alignItems: 'center', padding: 15, borderColor: 'white'
-                                }}>
-                                <Text style={{letterSpacing: 0.8, fontSize: 15, fontWeight: 'bold', color: 'white'}}>
-                                    Accept
+                                <Text style={{letterSpacing: 0.8, lineHeight: 30, fontSize: 18}}>
+                                    Petsie Care Team
                                 </Text>
-                            </TouchableOpacity>
+
+                                <Text style={{letterSpacing: 0.8, lineHeight: 30, fontSize: 18}}>
+                                    Available to chat
+                                </Text>
+
+                            </View>
                         </View>
                     </View>
 
-                    <Text style={[styles.title, {marginTop: 20}]}>Upcoming consultation</Text>
+                    <Text style={[styles.title, {marginTop: 20}]}>My Clinics</Text>
                     <Text style={{fontSize: 15, alignSelf: 'flex-start', padding: 15, paddingTop: 1}}>9:40 AM</Text>
 
                     <View style={styles.cardBot}>
@@ -140,8 +117,9 @@ const Home = ({navigation}) => {
                                 </View>
                             </View>
                         </View>
-
                     </View>
+
+                    <Text style={[styles.title, {marginTop: 20}]}>My Pets/Animals</Text>
                 </View>
 
             </ScrollView>
@@ -164,7 +142,9 @@ const styles = StyleSheet.create({
         fontSize: 18,
         alignSelf: 'flex-start',
         padding: 15,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        letterSpacing: 0.8,
+        color: '#AEAEAE'
     },
     cardTop: {
         padding: 18,
@@ -178,7 +158,6 @@ const styles = StyleSheet.create({
         padding: 18,
         borderRadius: 23,
         backgroundColor: "white",
-        elevation: 10,
     },
     text: {
         color: 'white',

@@ -68,32 +68,32 @@ const PetName = ({navigation}) => {
                             flex: 1, marginTop: -30, borderTopLeftRadius: 12 * 2,
                             borderTopRightRadius: 12 * 2, backgroundColor: '#f5f9fc'
                         }}>
-                <View style={{justifyContent: 'center', alignItems: 'center', padding: 5}}>
-                    {renderCalendar()}
-                    <Card
-                        isClick={true}
-                        pic1={per2}
-                        pic2={pet1}
-                        startTime="9:40 AM"
-                        name="Julia Wimmerlin"
-                        petName="Chamberlain"
-                        time="9:40-10:00"/>
-                    <Card
-                        pic1={per3}
-                        pic2={pet2}
-                        startTime="10:00 AM"
-                        name="Jolanta Kostecka"
-                        petName="Devil"
-                        time="10:00-10:20"/>
-                    <Card
-                        isClick={true}
-                        pic1={per4}
-                        pic2={pet3}
-                        startTime="10:20 AM"
-                        name="Michael Leanor"
-                        petName="Limone"
-                        time="10:20-10:40"/>
-                </View>
+                {/*<View style={{justifyContent: 'center', alignItems: 'center', padding: 5}}>*/}
+                {/*    {renderCalendar()}*/}
+                {/*    <Card*/}
+                {/*        isClick={true}*/}
+                {/*        pic1={per2}*/}
+                {/*        pic2={pet1}*/}
+                {/*        startTime="9:40 AM"*/}
+                {/*        name="Julia Wimmerlin"*/}
+                {/*        petName="Chamberlain"*/}
+                {/*        time="9:40-10:00"/>*/}
+                {/*    <Card*/}
+                {/*        pic1={per3}*/}
+                {/*        pic2={pet2}*/}
+                {/*        startTime="10:00 AM"*/}
+                {/*        name="Jolanta Kostecka"*/}
+                {/*        petName="Devil"*/}
+                {/*        time="10:00-10:20"/>*/}
+                {/*    <Card*/}
+                {/*        isClick={true}*/}
+                {/*        pic1={per4}*/}
+                {/*        pic2={pet3}*/}
+                {/*        startTime="10:20 AM"*/}
+                {/*        name="Michael Leanor"*/}
+                {/*        petName="Limone"*/}
+                {/*        time="10:20-10:40"/>*/}
+                {/*</View>*/}
             </ScrollView>
         </View>
     )
