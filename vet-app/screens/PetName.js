@@ -1,5 +1,7 @@
-import React, {useState} from 'react';
-import {StyleSheet, Text, View, TextInput, TouchableOpacity, ScrollView, ImageBackground, Image} from 'react-native';
+import React, {useCallback, useState} from 'react';
+import {StyleSheet, Text, View, TextInput,
+        TouchableOpacity, ScrollView, ImageBackground,
+        Image, Animated} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import CalendarStrip from 'react-native-calendar-strip';
 
@@ -18,6 +20,24 @@ import pet3 from "../assets/pet3.jpg"
 
 const PetName = ({navigation}) => {
     const [name, setName] = useState(null);
+
+    // const [active, setActive] = useState(0)
+    // const [open, setOpen] = useState(0)
+    // // const onLayout = useCallback(event => {})
+    // const [close, setClose] = useState(0)
+    // const [translate, setTranslate] = new Animated.Value(0)
+
+    // const [state, setState] = [{
+    //     active: null,
+    //     close: null,
+    //     open: null,
+    //     translateX: new Animated.Value(0)
+    // }]
+    //
+    // const onLayout = useCallback(event => {
+    //     const {width, height} = event.nativeEvent.layout.x
+    //     setState.close({width, height});
+    // }, []);
 
     function renderHeader() {
         return (
@@ -68,32 +88,24 @@ const PetName = ({navigation}) => {
                             flex: 1, marginTop: -30, borderTopLeftRadius: 12 * 2,
                             borderTopRightRadius: 12 * 2, backgroundColor: '#f5f9fc'
                         }}>
-                {/*<View style={{justifyContent: 'center', alignItems: 'center', padding: 5}}>*/}
-                {/*    {renderCalendar()}*/}
-                {/*    <Card*/}
-                {/*        isClick={true}*/}
-                {/*        pic1={per2}*/}
-                {/*        pic2={pet1}*/}
-                {/*        startTime="9:40 AM"*/}
-                {/*        name="Julia Wimmerlin"*/}
-                {/*        petName="Chamberlain"*/}
-                {/*        time="9:40-10:00"/>*/}
-                {/*    <Card*/}
-                {/*        pic1={per3}*/}
-                {/*        pic2={pet2}*/}
-                {/*        startTime="10:00 AM"*/}
-                {/*        name="Jolanta Kostecka"*/}
-                {/*        petName="Devil"*/}
-                {/*        time="10:00-10:20"/>*/}
-                {/*    <Card*/}
-                {/*        isClick={true}*/}
-                {/*        pic1={per4}*/}
-                {/*        pic2={pet3}*/}
-                {/*        startTime="10:20 AM"*/}
-                {/*        name="Michael Leanor"*/}
-                {/*        petName="Limone"*/}
-                {/*        time="10:20-10:40"/>*/}
-                {/*</View>*/}
+                <View style={{justifyContent: 'center', alignItems: 'center', padding: 5}}>
+                    {renderCalendar()}
+
+                    <View style={{flexDirection: 'row', marginTop: 10, borderWidth: 1, borderRadius: 20, width: 370, position: 'relative'}}>
+                        <View style={{width: '50%', height: '100%', backgroundColor: '#eb762b', top: 0, left: 0, position: 'absolute', borderRadius: 20}} />
+                            <TouchableOpacity
+                                style={{flex: 1, borderRadius: 20, padding: 20,
+                                    alignItems: 'center', justifyContent: 'center'}}>
+                                <Text style={{color: 'black'}}>Open</Text>
+                            </TouchableOpacity>
+
+                            <TouchableOpacity
+                                style={{flex: 1, borderRadius: 20, padding: 20,
+                                    alignItems: 'center', justifyContent: 'center'}}>
+                                <Text style={{color: 'black'}}>Close</Text>
+                            </TouchableOpacity>
+                    </View>
+                </View>
             </ScrollView>
         </View>
     )

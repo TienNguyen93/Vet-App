@@ -9,6 +9,8 @@ import pet1 from "../assets/pet1.jpg";
 
 function Card (props) {
     const available = props.available;
+    const review = props.review;
+
     const navigation = useNavigation();
 
     const message = () => {
@@ -23,38 +25,46 @@ function Card (props) {
         )
     }
 
-    const online = () => {
+    const onlineDot = () => {
         return (
-            <Icon name="circle" size={25} color="#eb762b" style={{paddingLeft: 40}}/>
+            <Icon name="circle" size={12} color="#4CBB17"
+                  style={{marginTop: -5, marginLeft: -5}}/>
+        )
+    }
+
+    const reviewStar = () => {
+        return (
+            <Icon name="star" size={27} color="#eb762b"
+                  style={{marginTop: -15, marginLeft: 20}}/>
         )
     }
 
     return (
         <View style={styles.container}>
-            {/*<Text style={{fontSize: 15, alignSelf: 'flex-start', padding: 15}}>*/}
-            {/*    {props.startTime}*/}
-            {/*</Text>*/}
+            <TouchableOpacity>
+                <View style={styles.cardBotTrue}>
+                    <View style={{flexDirection: 'row'}}>
+                        {props.available ? onlineDot() : null}
+                    </View>
 
-            <TouchableOpacity onPress={() => navigation.navigate('MyModal')}>
-                <View style={props.available ? styles.cardBotTrue : styles.cardBotFalse}>
+                    <View style={{flexDirection: 'row'}}>
+                        <Image source={props.image}
+                               style={{width: 80, height: 80, borderRadius: 100 / 2, padding: 40}}/>
 
-                        <View style={{flexDirection: 'row'}}>
-                            <View>
-                                <Image source={props.image}
-                                       style={{width: 80, height: 80, borderRadius: 100 / 2, padding: 40}}/>
-                            </View>
-
-                            <View style={{paddingLeft: 20}}>
+                        <View style={{paddingLeft: 20}}>
+                            <View style={{flexDirection: 'row'}}>
                                 <Text style={{letterSpacing: 0.1, fontSize: 20, color: 'black', fontWeight: 'bold'}}>
                                     {props.name}
                                 </Text>
-
-                                <Text style={{letterSpacing: 0.8, lineHeight: 30, fontSize: 18}}>
-                                    {props.clinic}
-                                </Text>
-                                {props.available ? message() : null}
+                                {props.review ? reviewStar() : null}
                             </View>
+
+                            <Text style={{letterSpacing: 0.8, fontSize: 15, marginTop: 5, marginBottom: 5, marginRight: 10, color: '#AEAEAE'}}>
+                                {props.clinic}
+                            </Text>
+                            {props.available ? message() : null}
                         </View>
+                    </View>
                 </View>
             </TouchableOpacity>
 
@@ -84,8 +94,6 @@ const styles = StyleSheet.create({
         padding: 18,
         borderRadius: 23,
         backgroundColor: "white",
-        borderWidth: 1,
-        borderColor: '#eb762b'
     },
     cardBotFalse: {
         height: 140,
@@ -95,3 +103,5 @@ const styles = StyleSheet.create({
         backgroundColor: "white",
     },
 });
+
+// onPress={() => navigation.navigate('MyModal')}

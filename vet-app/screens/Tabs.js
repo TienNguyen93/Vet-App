@@ -44,10 +44,9 @@ function Tabs() {
         >
             <Tab.Screen name={home} component={Home} options={{headerShown:false}}/>
             <Tab.Screen name={appointment} component={AppointmentStackScreen} options={{headerShown:false}} />
-            <Tab.Screen name={profile} component={ProfileScreen} />
+            <Tab.Screen name={profile} component={ProfileScreen} options={{headerShown:false}}/>
         </Tab.Navigator>
     )
-
 }
 
 export default Tabs;

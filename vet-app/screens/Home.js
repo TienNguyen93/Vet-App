@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View, TextInput,
-         TouchableOpacity, Image, ScrollView, ImageBackground }
+         TouchableOpacity, Image, ScrollView, ImageBackground, Pressable }
     from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Ionicons from "react-native-vector-icons/Ionicons";
@@ -53,73 +53,50 @@ const Home = ({navigation}) => {
                 }}>
                 <View style={{justifyContent: 'center', alignItems: 'center', padding: 5}}>
                     <Text style={styles.title}>Book Now</Text>
-
                     <Card
                         image={doctor}
                         name="Dr. Nelson Armstrong"
                         clinic="Petsie Care Team"
                         available={true}
+                        review={true}
+                    />
+                    <View style={{flexDirection: 'row'}}>
+                        <Text style={styles.title}>My Clinics</Text>
+                        <Pressable onPress={() => alert("search pressed!")} style={{marginLeft: 185, alignSelf: 'center'}}>
+                            <Ionicons name="search" size={25} color="#eb762b" >
+                                <Text style={{fontSize: 15, color: '#AEAEAE', fontWeight: 'bold'}}>
+                                    {" "}Search
+                                </Text>
+                            </Ionicons>
+                        </Pressable>
+                    </View>
+
+                    <Card
+                        image={vet2}
+                        name="Petsie Care Team"
+                        clinic="Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
+                        available={false}
+                        review={false}
                     />
 
-                    <View style={styles.cardBot}>
-                        <View style={{flexDirection: 'row'}}>
-                            <Icon name="circle" size={25} color="#eb762b" style={{paddingLeft: 40}}/>
-                            <Icon name="star" size={25} color="#eb762b" style={{paddingLeft: 40}}/>
+                    <Text style={[styles.title, {marginTop: 20, marginBottom: 5}]}>My Pets/Animals</Text>
+                        <View style={styles.cardTop}>
+                            <Text style={{color: 'white', fontSize: 20, fontWeight: 'bold',
+                                textAlign: 'center', marginLeft: 45, marginRight: 45, padding: 10}}>
+                                Looks like you haven't added your pet yet
+                            </Text>
+                            <Text style={{color: '#ececec', fontSize: 18, textAlign: 'center', padding: 10, marginBottom: 10}}>
+                                It's super easy. Simply tap "Add one", upload a photo
+                                and tell us all about your furry friends
+                            </Text>
+                            <Pressable onPress={() => alert("go to add pet modal")}>
+                                <Text style={{backgroundColor: 'white', color: 'black', textAlign: 'center', alignSelf: 'center',
+                                    borderRadius: 20, padding: 10, fontSize: 18, fontWeight: 'bold', paddingLeft: 25, paddingRight: 25, }}>
+                                    Thanks for the tip
+                                </Text>
+                            </Pressable>
+
                         </View>
-                        <View style={{flexDirection: 'row', height: 100}}>
-                            <Image source={doctor} style={{width: 80, height: 80, borderRadius: 100 / 2, padding: 40}}/>
-                            <View style={{paddingLeft: 20}}>
-                                <Text style={{letterSpacing: 0.1, fontSize: 20, color: 'black', fontWeight: 'bold'}}>
-                                    Dr. Nelson Armstrong
-                                </Text>
-
-                                <Text style={{letterSpacing: 0.8, lineHeight: 30, fontSize: 18}}>
-                                    Petsie Care Team
-                                </Text>
-
-                                <Text style={{letterSpacing: 0.8, lineHeight: 30, fontSize: 18}}>
-                                    Available to chat
-                                </Text>
-
-                            </View>
-                        </View>
-                    </View>
-
-                    <Text style={[styles.title, {marginTop: 20}]}>My Clinics</Text>
-                    <Text style={{fontSize: 15, alignSelf: 'flex-start', padding: 15, paddingTop: 1}}>9:40 AM</Text>
-
-                    <View style={styles.cardBot}>
-                        <View style={{flexDirection: 'row'}}>
-                            <View>
-                                <Image source={per2} style={{width: 80, height: 80, borderRadius: 100 / 2, padding: 40}}/>
-                                <View style={{position: 'absolute', alignSelf: 'center', paddingTop: 65}}>
-                                    <Image source={pet1} style={{width: 40, height: 40, borderRadius: 100 / 2,}}/>
-                                </View>
-                            </View>
-
-                            <View style={{paddingLeft: 20}}>
-                                <Text style={{letterSpacing: 0.1, fontSize: 18, color: 'black', fontWeight: 'bold'}}>
-                                    Julia Olive
-                                </Text>
-
-                                <Ionicons name="paw-outline" size={18} color="#A9A9A9">
-                                    <Text style={{letterSpacing: 0.8, lineHeight: 30}}>
-                                        {" "}Chamberlain
-                                    </Text>
-                                </Ionicons>
-
-                                <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-                                    <Icon name="clock-outline" size={18} color="#eb762b">
-                                        <Text style={{letterSpacing: 0.8, lineHeight: 30, fontWeight: 'bold', color: 'black'}}>
-                                            {" "}9:40-10:00
-                                        </Text>
-                                    </Icon>
-                                </View>
-                            </View>
-                        </View>
-                    </View>
-
-                    <Text style={[styles.title, {marginTop: 20}]}>My Pets/Animals</Text>
                 </View>
 
             </ScrollView>
@@ -133,10 +110,6 @@ const styles = StyleSheet.create({
     container: {
         width: '100%',
         flex: 1,
-        // backgroundColor: '#f8f8ff',
-        // alignItems: 'center',
-        // justifyContent: 'center',
-        // padding: 15,
     },
     title: {
         fontSize: 18,
@@ -148,16 +121,9 @@ const styles = StyleSheet.create({
     },
     cardTop: {
         padding: 18,
-        borderRadius: 23,
+        borderRadius: 20,
         backgroundColor: "#eb762b",
         elevation: 30,
-    },
-    cardBot: {
-        height: 140,
-        width: 370,
-        padding: 18,
-        borderRadius: 23,
-        backgroundColor: "white",
     },
     text: {
         color: 'white',
