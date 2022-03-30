@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
         width: 370,
         padding: 18,
         borderRadius: 23,
-        backgroundColor: "white",
+        backgroundColor: "white"
     },
     cardBotFalse: {
         height: 140,

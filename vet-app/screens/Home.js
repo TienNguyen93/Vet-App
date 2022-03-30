@@ -16,7 +16,6 @@ import Card from '../components/Card'
 
 
 const Home = ({navigation}) => {
-
     function renderHeader() {
         return (
             <View style={{width: '100%',height: 250}}>
@@ -49,7 +48,7 @@ const Home = ({navigation}) => {
             <ScrollView
                 showsVerticalScrollIndicator={false}
                 style={{flex: 1, marginTop: -25, borderTopLeftRadius: 12 * 2,
-                        borderTopRightRadius: 12 * 2, backgroundColor: '#F2F1F0'
+                        borderTopRightRadius: 12 * 2, backgroundColor: '#f5f9fc'
                 }}>
                 <View style={{justifyContent: 'center', alignItems: 'center', padding: 5}}>
                     <Text style={styles.title}>Book Now</Text>
@@ -64,7 +63,7 @@ const Home = ({navigation}) => {
                         <Text style={styles.title}>My Clinics</Text>
                         <Pressable onPress={() => alert("search pressed!")} style={{marginLeft: 185, alignSelf: 'center'}}>
                             <Ionicons name="search" size={25} color="#eb762b" >
-                                <Text style={{fontSize: 15, color: '#AEAEAE', fontWeight: 'bold'}}>
+                                <Text style={{fontSize: 15, color: '#AEAEAE', fontWeight: 'bold', alignItems: 'center'}}>
                                     {" "}Search
                                 </Text>
                             </Ionicons>

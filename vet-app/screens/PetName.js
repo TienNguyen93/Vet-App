@@ -21,23 +21,19 @@ import pet3 from "../assets/pet3.jpg"
 const PetName = ({navigation}) => {
     const [name, setName] = useState(null);
 
-    // const [active, setActive] = useState(0)
-    // const [open, setOpen] = useState(0)
-    // // const onLayout = useCallback(event => {})
-    // const [close, setClose] = useState(0)
-    // const [translate, setTranslate] = new Animated.Value(0)
+    const Buttons = () => {
+        return (
+            <View style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                borderRadius: 25
+            }}>
 
-    // const [state, setState] = [{
-    //     active: null,
-    //     close: null,
-    //     open: null,
-    //     translateX: new Animated.Value(0)
-    // }]
-    //
-    // const onLayout = useCallback(event => {
-    //     const {width, height} = event.nativeEvent.layout.x
-    //     setState.close({width, height});
-    // }, []);
+            </View>
+        )
+    }
+
 
     function renderHeader() {
         return (
