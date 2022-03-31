@@ -4,18 +4,17 @@ import { StyleSheet, Text, View, TextInput,
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Ionicons from "react-native-vector-icons/Ionicons";
 
-import per1 from '../assets/per1.jpg'
-import per2 from '../assets/per2.jpg'
-import pet1 from '../assets/pet1.jpg'
 import orange2 from '../assets/orange2.jpg'
-import doctor from '../assets/doctor.jpg'
 import vet1 from '../assets/vet1.png'
-import vet2 from '../assets/vet2.png'
-import vet3 from '../assets/vet3.png'
-import Card from '../components/Card'
+import per1 from '../assets/per1.jpg'
 
+import Card from '../components/Card'
+import {doctors} from '../components/Dummy'
+import {clinics} from '../components/Dummy'
 
 const Home = ({navigation}) => {
+
+    // helper functions
     function renderHeader() {
         return (
             <View style={{width: '100%',height: 250}}>
@@ -42,6 +41,8 @@ const Home = ({navigation}) => {
         )
     }
 
+    // function
+
     return (
         <View style={styles.container}>
             {renderHeader()}
@@ -50,33 +51,43 @@ const Home = ({navigation}) => {
                 style={{flex: 1, marginTop: -25, borderTopLeftRadius: 12 * 2,
                         borderTopRightRadius: 12 * 2, backgroundColor: '#f5f9fc'
                 }}>
-                <View style={{justifyContent: 'center', alignItems: 'center', padding: 5}}>
+                <View style={{alignItems: 'center', padding: 5}}>
                     <Text style={styles.title}>Book Now</Text>
-                    <Card
-                        image={doctor}
-                        name="Dr. Nelson Armstrong"
-                        clinic="Petsie Care Team"
-                        available={true}
-                        review={true}
-                    />
+
+                    <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+                        {doctors.map((item) => (
+                            <Card
+                                image={item.image}
+                                name={item.name}
+                                clinic={item.clinic}
+                                available={item.available}
+                                review={item.review}/>
+                        ))}
+                    </ScrollView>
+
                     <View style={{flexDirection: 'row'}}>
                         <Text style={styles.title}>My Clinics</Text>
+
                         <Pressable onPress={() => alert("search pressed!")} style={{marginLeft: 185, alignSelf: 'center'}}>
-                            <Ionicons name="search" size={25} color="#eb762b" >
-                                <Text style={{fontSize: 15, color: '#AEAEAE', fontWeight: 'bold', alignItems: 'center'}}>
-                                    {" "}Search
-                                </Text>
+                            <Ionicons name="search" size={25} color="#eb762b">
+                                <TextInput
+                                    style={[styles.searchStyle, {marginRight: -10}]}
+                                    placeholder="Search">
+                                </TextInput>
                             </Ionicons>
                         </Pressable>
                     </View>
 
-                    <Card
-                        image={vet2}
-                        name="Petsie Care Team"
-                        clinic="Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
-                        available={false}
-                        review={false}
-                    />
+                    <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+                        {clinics.map((item) => (
+                            <Card
+                                image={item.image}
+                                name={item.name}
+                                clinic={item.clinic}
+                                available={item.available}
+                                review={item.review}/>
+                        ))}
+                    </ScrollView>
 
                     <Text style={[styles.title, {marginTop: 20, marginBottom: 5}]}>My Pets/Animals</Text>
                         <View style={styles.cardTop}>
@@ -128,5 +139,11 @@ const styles = StyleSheet.create({
         color: 'white',
         fontWeight: 'bold',
         fontSize: 18,
+    },
+    searchStyle: {
+        fontSize: 15,
+        color: '#AEAEAE',
+        fontWeight: 'bold',
+        alignItems: 'center'
     }
 });

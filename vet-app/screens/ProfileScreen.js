@@ -17,7 +17,7 @@ function ProfileScreen ({navigation}) {
                 <View style={{borderTopLeftRadius: 12 * 2, borderTopRightRadius: 12 * 2,
                      alignItems: 'center', backgroundColor: 'white'}}>
                     <Image source={per1}
-                           style={{width: 80, height: 80, borderRadius: 100 / 2}}/>
+                           style={{width: 100, height: 100, borderRadius: 100 / 2}}/>
                     <Text style={{fontSize: 23, fontWeight: 'bold', letterSpacing: 0.5, marginTop: 20, marginBottom: 10}}>
                         Jessie Leanor
                     </Text>

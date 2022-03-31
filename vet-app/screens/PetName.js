@@ -1,4 +1,4 @@
-import React, {useCallback, useState} from 'react';
+import React, {useCallback, useState, useRef} from 'react';
 import {StyleSheet, Text, View, TextInput,
         TouchableOpacity, ScrollView, ImageBackground,
         Image, Animated} from 'react-native';
@@ -10,30 +10,10 @@ import Card from '../components/Card'
 import {Header} from "../components/Header";
 
 import orange2 from "../assets/orange2.jpg";
-import per2 from "../assets/per2.jpg";
-import per3 from "../assets/per3.jpg";
-import per4 from "../assets/per4.jpg";
-import pet1 from "../assets/pet1.jpg"
-import pet2 from "../assets/pet2.jpg"
-import pet3 from "../assets/pet3.jpg"
 
 
 const PetName = ({navigation}) => {
     const [name, setName] = useState(null);
-
-    const Buttons = () => {
-        return (
-            <View style={{
-                flexDirection: 'row',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                borderRadius: 25
-            }}>
-
-            </View>
-        )
-    }
-
 
     function renderHeader() {
         return (
